@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Coiny|Gloria+Hallelujah rel="stylesheet');
+
+body{
+    margin :0;
+}
+#header{
+    min-height:100px;
+}
+.font1{font-family: 'Abril Fatface', cursive;;
+    color : darkblue;}
+
+.font2{font-family: 'Gloria Hallelujah', cursive;
+    color : skyblue;
+}
+
+.font3{font-family: 'Coiny', cursive;
+    color : darkturquoise;
+}
+.main {
+    max-width:800px;
+    min-height:500px;
+    padding:5px;
+    margin:auto;
+}
+img{
+    max-width: 100%;
+    height: auto;
+  }
+
+span{
+    font-weight: bold;
+}
+.video-container {
+    position: relative;
+    padding-bottom: 30.25%;
+    padding-top: 10px; height: 0; overflow: hidden;
+}
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 35;
+    width: auto;
+    height: auto;
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+        background-color:skyblue;
+        margin:5px;
+    }
+
+    #main{
+        background-color: darkgray;
+    }
+}
+

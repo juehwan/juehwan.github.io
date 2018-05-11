@@ -1,0 +1,22 @@
+body{
+    margin : 0l
+}
+
+#main{
+    margin : auto;
+    max-width : 500px;
+    min-height : 200px;
+    border : 1px solid white;
+    padding : 20px;
+}
+#btnSave{
+    padding :5px;
+    margin-top : 5px;
+    color : grey;
+    border : 0;
+}
+
+table{
+    border: 1px solid white;
+    width : 100%;
+}

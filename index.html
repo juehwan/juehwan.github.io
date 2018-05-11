@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <head>
+        <meta charset = "UTf-8">
+        <title> test2</title>
+        <link rel="stylesheet" href="phonebookv2.css";>
+        <a href="https://juehwan.github.io/indexweek2.html">week2</a>
+        <a href="https://juehwan.github.io/indexweek3.html">week3</a>
+    </head>
+
+<body >
+    <center>
+   <h1>Phone Book </h1> <br/>
+
+   <h2>Last Name  <input id="ln" type = "text" value ="Last Name"   > </h2>
+   <h2>First Name  <input id="fn" type = "text" value = "First Name"> </h2>
+   <h2>Phone Number  <input id="phone" type = "text" value = "Phone Number"> </h2> 
+   <button id="btnSave">Save</button>
+   <table border = "1" id="mytable">
+        <tr> 
+            <th id = "sortln" onclick="tablesort(0)" style="cursor: pointer;">Last Name</th> 
+            <th id = "sortfn" onclick="tablesort(1)" style="cursor: pointer;">First Name</th> 
+            <th colspan= "2" id = "sortpn" onclick="tablesort(2)" style="cursor: pointer;">Phone Number</th> 
+                
+        </tr>
+        
+  </table>
+
+  
+</body>
+</center>
+<script src="phonebookv2.js">
+
+    </script>
+
+</html>
