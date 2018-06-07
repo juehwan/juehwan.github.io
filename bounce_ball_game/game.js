@@ -46,7 +46,6 @@ function keyUpfunc(e) {
         leftPressed = false; //키 안눌릴때 false
     }
 }
-
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBall();
@@ -67,24 +66,20 @@ function draw() {
           score++; //패들에 부딪치면 점수++
    }
         else {
-            //alert("GAME OVER"); 알람뜨는거 귀찮아서 삭제  
+            //alert("GAME OVER"); 게임종료 문구뜨게하기
           
             document.location.reload(); //무한 alert방지해주는 코드
         }
-    }
-    
+    }    
     if(rightPressed && paddleX < canvas.width-paddleWidth) { //패들 벽 나가는거 방지
         paddleX += 7;
     }
     else if(leftPressed && paddleX > 0) {
         paddleX -= 7;
-    }
-    
+    }  
     x += dx;
-    y += dy;
-    
+    y += dy; 
 }
-
 function drawScore() {
   ctx.font = "16px Arial";
   ctx.fillStyle = "green";
