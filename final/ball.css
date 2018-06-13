@@ -1,0 +1,14 @@
+#drawArea {
+    background-color : black;
+    margin:auto;
+}
+
+#menuTop {
+    margin-left: 350px;
+    margin-top:30px;
+    margin-bottom: 10px;
+}
+
+#drawAreaOuter{ 
+    margin: auto;
+}

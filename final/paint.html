@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <meta charset="UTF-8">
+ <title>그림판</title>
+ <style>
+ body{
+  margin:20px;
+ }
+ canvas{
+  cursor:crosshair;
+  border:solid 2px #000;
+  margin:15px 0 0 0;
+   -webkit-box-shadow:1px 1px 20px #ccc;
+   -moz-box-shadow:1px 1px 20px #ccc;
+  box-shadow:1px 1px 20px #ccc;
+ }
+ input {
+  border:1px solid #000;
+ }
+ </style>
+ <script>
+  var canvas;
+  var ctx;
+  var flag = false;
+
+  var ready = function(){
+   canvas = document.getElementById("canvas");
+   ctx = canvas.getContext("2d");
+   canvas.onmousedown = drawStart;
+   canvas.onmousemove = drawing;
+   window.onmouseup = drawEnd;
+  }
+
+  var w2 = function(){
+   ctx.lineWidth = 2;
+  }
+  var w5 = function(){
+   ctx.lineWidth = 5;
+  }
+  var w8 = function(){
+   ctx.lineWidth = 8;
+  }
+  var w12 = function(){
+   ctx.lineWidth = 12;
+  }
+  var w15 = function(){
+   ctx.lineWidth = 15;
+  }
+  var black = function(){
+   ctx.strokeStyle = '#000000';
+  }
+  var red = function(){
+   ctx.strokeStyle = '#ff0000';
+  }
+  var green = function(){
+   ctx.strokeStyle = '#00ff00';
+  }
+  var blue = function(){
+   ctx.strokeStyle = '#0000ff';
+  }
+  var yellow = function(){
+   ctx.strokeStyle = '#ffff00';
+  }
+  var skyblue = function(){
+   ctx.strokeStyle = '#00D8FF';
+  }
+  var purple = function(){
+   ctx.strokeStyle = '#A566FF';
+  }
+  var pink = function(){
+   ctx.strokeStyle = '#FFB2D9';
+  }
+  var gray = function(){
+   ctx.strokeStyle = '#A6A6A6';
+  }
+  var orange = function(){
+   ctx.strokeStyle = '#FFBB00';
+  }
+
+  var drawStart = function(event){
+   ctx.beginPath();
+   var xpos = event.target.offsetLeft;
+   var ypos = event.target.offsetTop;
+   ctx.moveTo(event.clientX-xpos, event.clientY-ypos);
+   flag = true;
+  }
+  var drawing = function(event){
+   if(flag) {
+   var xpos = event.target.offsetLeft;
+   var ypos = event.target.offsetTop;
+   ctx.lineCap = 'round'
+   ctx.lineTo(event.clientX-xpos, event.clientY-ypos);
+   ctx.stroke();
+   }
+  }
+  var drawEnd = function(event){
+   flag = false;
+  }
+  var erase = function(){
+   ctx.clearRect(0,0,canvas.width,canvas.height);
+  }
+ </script>
+</head>
+
+<body onload="ready()">
+ <div>
+  <input type="button" value="erase all" onclick="erase()"></input>
+  
+  <input type="button" value="pensize5" onclick="w15()"></input>
+  <input type="button" value="pensize4" onclick="w12()"></input>
+  <input type="button" value="pensize3" onclick="w8()"></input>
+ <input type="button" value="pensize2" onclick="w5()"></input>
+  <input type="button" value="pensize1" onclick="w2()"></input>
+  
+  <input type="button" value="black" onclick="black()"></input>
+  <input type="button" value="red" onclick="red()"></input>
+  <input type="button" value="blue" onclick="blue()"></input>
+  <input type="button" value="green" onclick="green()"></input>
+  <input type="button" value="yellow" onclick="yellow()"></input>
+<input type="button" value="skyblue" onclick="skyblue()"></input>
+<input type="button" value="purple" onclick="purple()"></input>
+<input type="button" value="pink" onclick="pink()"></input>
+<input type="button" value="gray" onclick="gray()"></input>
+<input type="button" value="orange" onclick="orange()"></input>
+ </div>
+ <canvas id="canvas" width="1000" height="250"></canvas>
+</body>
+</html>
